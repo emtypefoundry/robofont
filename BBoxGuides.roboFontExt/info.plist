@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>addToMenu</key>
+	<array>
+		<dict>
+			<key>path</key>
+			<string>guias_vainilla.py</string>
+			<key>preferredName</key>
+			<string>BBox Guides</string>
+			<key>shortKey</key>
+			<array>
+				<integer>0</integer>
+				<string>6</string>
+			</array>
+		</dict>
+	</array>
+	<key>developer</key>
+	<string>Emtype Foundry</string>
+	<key>developerURL</key>
+	<string>www.emtype.net</string>
+	<key>html</key>
+	<true/>
+	<key>launchAtStartUp</key>
+	<integer>0</integer>
+	<key>mainScript</key>
+	<string></string>
+	<key>name</key>
+	<string>BBox Guides</string>
+	<key>requiresVersionMajor</key>
+	<string>1</string>
+	<key>requiresVersionMinor</key>
+	<string>5</string>
+	<key>timeStamp</key>
+	<real>1406043018.4291389</real>
+	<key>version</key>
+	<string>1.0</string>
+</dict>
+</plist>
