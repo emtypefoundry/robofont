@@ -36,5 +36,10 @@
 	<real>1406043018.4291389</real>
 	<key>version</key>
 	<string>1.0</string>
+	<key>com.robofontmechanic.Mechanic</key>
+	<dict>
+	  <key>repository</key>
+	  <string>emtypefoundry/robofont</string>
+	</dict>
 </dict>
 </plist>
