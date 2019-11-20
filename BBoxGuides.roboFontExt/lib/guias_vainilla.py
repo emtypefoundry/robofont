@@ -1,12 +1,13 @@
-# EMT BBox guides
+# EMT BBox guides Robofont 3
 
 # Emtype Foundry, Barcelona.
-
+from mojo.roboFont import OpenWindow
 from vanilla import *
-from robofab.world import CurrentFont, CurrentGlyph
 
+WIN_KEY = 'test'
 
 class WindowDemo(object):
+    __name__ = WIN_KEY
 
     def __init__(self):
         self.w = FloatingWindow((115,87), "EMT")
@@ -18,53 +19,40 @@ class WindowDemo(object):
 
     def buttonCallback(self, sender):
         g= CurrentGlyph()
-        g.clearGuides()
-        g.addGuide((g.box[0], 0), 90,  "left")
-        g.addGuide((g.box[2], 0), 90,  "right")
-        g.addGuide((0, g.box[1]), 0,  "bottom")
-        g.addGuide((0, g.box[3]), 0,  "top")
-        g.addGuide(( (g.box[2] + g.leftMargin) /2 , 0), 90,  "center")
-        g.addGuide(( 0 ,(g.box[3] + g.box[1] ) /2), 0,  "center")
+        g.clearGuidelines()
+        g.appendGuideline((g.box[0], 0), 90,  "left", color=(0.5, 0.0, 1, 1.0))
+        g.appendGuideline((g.box[2], 0), 90,  "right", color=(0.5, 0.0, 1, 1.0))
+        g.appendGuideline((0, g.box[1]), 0,  "bottom", color=(0.5, 0.0, 1, 1.0))
+        g.appendGuideline((0, g.box[3]), 0,  "top", color=(0.5, 0.0, 1, 1.0))
+        g.appendGuideline(( (g.box[2] + g.leftMargin) /2 , 0), 90,  "center", color=(0.5, 0.0, 1, 1.0))
+        g.appendGuideline(( 0 ,(g.box[3] + g.box[1] ) /2), 0,  "center", color=(0.5, 0.0, 1, 1.0))
         g.update()
 
         for c in g:
             if c.selected == 1:
-                g.clearGuides()
-                g.addGuide((c.box[0], 0), 90,  "left")
-                g.addGuide((c.box[2], 0), 90,  "right")
-                g.addGuide((0, c.box[1]), 0,  "bottom")
-                g.addGuide((0, c.box[3]), 0,  "top")
-                g.addGuide(( (c.box[2] + c.box[0]) /2 , 0), 90,  "center")
-                g.addGuide(( 0 ,(c.box[3] + c.box[1] ) /2), 0,  "center")
+                g.clearGuidelines()
+                g.appendGuideline((c.box[0], 0), 90,  "left", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline((c.box[2], 0), 90,  "right", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline((0, c.box[1]), 0,  "bottom", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline((0, c.box[3]), 0,  "top", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline(( (c.box[2] + c.box[0]) /2 , 0), 90,  "center", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline(( 0 ,(c.box[3] + c.box[1] ) /2), 0,  "center", color=(0.5, 0.0, 1, 1.0))
                 g.update()
 
         for cc in g.components:
             if cc.selected == 1:
-                g.clearGuides()
-                g.addGuide((cc.box[0], 0), 90,  "left")
-                g.addGuide((cc.box[2], 0), 90,  "right")
-                g.addGuide((0, cc.box[1]), 0,  "bottom")
-                g.addGuide((0, cc.box[3]), 0,  "top")
-                g.addGuide(( (cc.box[2] + cc.box[0]) /2 , 0), 90,  "center")
-                g.addGuide(( 0 ,(cc.box[3] + cc.box[1] ) /2), 0,  "center")
+                g.clearGuidelines()
+                g.appendGuideline((cc.box[0], 0), 90,  "left", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline((cc.box[2], 0), 90,  "right", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline((0, cc.box[1]), 0,  "bottom", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline((0, cc.box[3]), 0,  "top", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline(( (cc.box[2] + cc.box[0]) /2 , 0), 90,  "center", color=(0.5, 0.0, 1, 1.0))
+                g.appendGuideline(( 0 ,(cc.box[3] + cc.box[1] ) /2), 0,  "center", color=(0.5, 0.0, 1, 1.0))
                 g.update()
                 
     def button2Callback(self, sender):
         g= CurrentGlyph()
-        g.clearGuides()
+        g.clearGuidelines()
         g.update()
 
 WindowDemo()
-
-
-#g.clearGuides()
-
-        #self.w.line = HorizontalLine((10, 10, -10, 1))
-
-
-    #def __init__(self):
-    #    self.w = Window((115,80), "EMT")
-    #    #self.w.myTextBox = TextBox((10, 7, -10, 17), "Center guide")
-    #    self.w.myButton = Button((10, 15, -10, 20), "+", callback=self.buttonCallback)
-    #    self.w.myButton2 = Button((10, 45, -10, 20), "-", callback=self.button2Callback)
-    #    self.w.open()
