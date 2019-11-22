@@ -1,2 +1,1 @@
-# Robofont
-Some scripts for Robofont...
+Updated to RoboFont 3
